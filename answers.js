@@ -92,7 +92,7 @@ console.log(repeatString("hi", 3)); //hi hi hi
 
 //take a string, return reverse of that string
 
-function reverseString(anyString){
+function reverseString(anyString) {
     return anyString.split("").reverse().join("");
 }
 
@@ -102,11 +102,11 @@ console.log(reverseString("")); //""
 
 //take a number, return factorial
 
-function factorial(a){
+function factorial(a) {
     var factorial = 1;
-    while (a>0) {
+    while (a > 0) {
         factorial *= a;
-        a --;
+        a--;
     }
     return factorial;
 }
@@ -116,19 +116,63 @@ console.log(factorial(11)); //39916800
 
 //take a phrase, return longest word of that phrase
 
-function longestWord(anyString){
+function longestWord(anyString) {
     var splitString = anyString.split(" ");
     var numberOfWords = splitString.length;
     var longestWord = "";
-    
-    for (var i = 0; i < numberOfWords; i ++) {
+
+    for (var i = 0; i < numberOfWords; i++) {
         if (splitString[i].length >= longestWord.length) {
             longestWord = splitString[i];
         }
     }
-    
+
     return longestWord;
 }
 
 console.log(longestWord("this is a testing string")); //testing
 console.log(longestWord("bear cat computer mug bottle")); //computer
+
+//take phrase, return phrase with every first letter capitalized
+
+function firstLetterCapital(anyString) {
+    var splitString = anyString.toLowerCase().split(" ");
+    var withCapitalLetters = [];
+
+    for (var i = 0; i < splitString.length; i++) {
+
+        withCapitalLetters.push(splitString[i].charAt(0).toUpperCase() + splitString[i].substring(1, splitString[i].length));
+    }
+
+    return withCapitalLetters.join(" ");
+
+}
+
+console.log(firstLetterCapital("heLLo WoRlD")); //Hello World
+console.log(firstLetterCapital("tHis StriNg")); //This String
+
+//return largest number in an array
+
+function largestNumber(anyArray) {
+    var i = 0;
+    var numberArray = [];
+    var sortedArray = [];
+
+    function compareNumbers(a, b) {
+        return a - b;
+    }
+    
+    //filter array to get only the numbers
+    while (i < anyArray.length) {
+        if (typeof(anyArray[i]) === "number") {
+            numberArray.push(anyArray[i]);
+        }
+        i++;
+    }
+
+    sortedArray = numberArray.sort(compareNumbers);
+    return sortedArray[sortedArray.length-1];
+}
+
+console.log(largestNumber([5, 6, 2, 54, 23])); //54
+console.log(largestNumber(["string", 608, 1222, 54, 23, "hi"])); //1222
