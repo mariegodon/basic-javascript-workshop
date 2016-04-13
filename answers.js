@@ -6,9 +6,9 @@ function firstChar(anyString) {
     return anyString.substring(0, 1);
 }
 
-console.log(firstChar("string")); //s
-console.log(firstChar("")); //empty string length 1 char
-//console.log(firstChar(223)); error
+//console.log(firstChar("string")); //s
+//console.log(firstChar("")); //empty string length 1 char
+//console.log(firstChar(223)); //error
 
 //function that takes string and returns last character
 
@@ -17,8 +17,8 @@ function lastChar(anyString) {
     return anyString.substring(length - 1, length);
 }
 
-console.log(lastChar("string")); //g
-console.log(lastChar("")); //empty string length 1 char
+//console.log(lastChar("string")); //g
+//console.log(lastChar("")); //empty string length 1 char
 
 //function that takes a string and a number, returns character at position
 //representing the number
@@ -27,9 +27,9 @@ function characterAtPosition(anyString, position) {
     return anyString.charAt(position);
 }
 
-console.log(characterAtPosition("my string", 5)); //r
-console.log(characterAtPosition("", 0)); //empty string length 1
-console.log(characterAtPosition("", 5)); //empty string length 1
+//console.log(characterAtPosition("my string", 5)); //r
+//console.log(characterAtPosition("", 0)); //empty string length 1
+//console.log(characterAtPosition("", 5)); //empty string length 1
 
 //function that takes 2 numbers and adds them together
 
@@ -37,8 +37,8 @@ function add(a, b) {
     return a + b;
 }
 
-console.log(add(2, 4)); //6
-console.log(add("string", 7)); //string7, type is string
+//console.log(add(2, 4)); //6
+//console.log(add("string", 7)); //string7, type is string
 
 //function that takes two inputs and multiplies them together
 
@@ -46,8 +46,8 @@ function multiply(a, b) {
     return a * b;
 }
 
-console.log(multiply(2, 4)); //8
-console.log(multiply("string", 7)); //NaN
+//console.log(multiply(2, 4)); //8
+//console.log(multiply("string", 7)); //NaN
 
 //function that takes two numbers and a string
 //perform operation on the two numbers described by the string
@@ -71,9 +71,9 @@ function operation(a, b, operator) {
     }
 }
 
-console.log(operation(10, 5, "add")); //15
-console.log(operation(10, 5, "div")); //2
-console.log(operation(10, 5, "something")); //0
+//console.log(operation(10, 5, "add")); //15
+//console.log(operation(10, 5, "div")); //2
+//console.log(operation(10, 5, "something")); //0
 
 //take a string and a number, repeat that string that number of time
 
@@ -87,8 +87,8 @@ function repeatString(anyString, numOfTimes) {
     return repeatedString;
 }
 
-console.log(repeatString("repeat this", 6));
-console.log(repeatString("hi", 3)); //hi hi hi
+//console.log(repeatString("repeat this", 6));
+//console.log(repeatString("hi", 3)); //hi hi hi
 
 //take a string, return reverse of that string
 
@@ -96,9 +96,9 @@ function reverseString(anyString) {
     return anyString.split("").reverse().join("");
 }
 
-console.log(reverseString("hello")); //olleh
-console.log(reverseString("my name is marie")); //eiram si eman ym
-console.log(reverseString("")); //""
+//console.log(reverseString("hello")); //olleh
+//console.log(reverseString("my name is marie")); //eiram si eman ym
+//console.log(reverseString("")); //""
 
 //take a number, return factorial
 
@@ -111,8 +111,8 @@ function factorial(a) {
     return factorial;
 }
 
-console.log(factorial(6)); //720
-console.log(factorial(11)); //39916800
+//console.log(factorial(6)); //720
+//console.log(factorial(11)); //39916800
 
 //take a phrase, return longest word of that phrase
 
@@ -130,8 +130,8 @@ function longestWord(anyString) {
     return longestWord;
 }
 
-console.log(longestWord("this is a testing string")); //testing
-console.log(longestWord("bear cat computer mug bottle")); //computer
+//console.log(longestWord("this is a testing string")); //testing
+//console.log(longestWord("bear cat computer mug bottle")); //computer
 
 //take phrase, return phrase with every first letter capitalized
 
@@ -148,8 +148,8 @@ function firstLetterCapital(anyString) {
 
 }
 
-console.log(firstLetterCapital("heLLo WoRlD")); //Hello World
-console.log(firstLetterCapital("tHis StriNg")); //This String
+//console.log(firstLetterCapital("heLLo WoRlD")); //Hello World
+//console.log(firstLetterCapital("tHis StriNg")); //This String
 
 //return largest number in an array
 
@@ -174,8 +174,8 @@ function largestNumber(anyArray) {
     return sortedArray[sortedArray.length - 1];
 }
 
-console.log(largestNumber([5, 6, 2, 54, 23])); //54
-console.log(largestNumber(["string", 608, 1222, 54, 23, "hi"])); //1222
+//console.log(largestNumber([5, 6, 2, 54, 23])); //54
+//console.log(largestNumber(["string", 608, 1222, 54, 23, "hi"])); //1222
 
 //return a filtered array with only truthy values
 
@@ -189,8 +189,8 @@ function truthyArray(anyArray) {
 
 }
 
-console.log(truthyArray([0, 1, 0, 0, 1])); //[1,1]
-console.log(truthyArray(["something", "", 1, 0, true, false])) //["something", 1, true]
+//console.log(truthyArray([0, 1, 0, 0, 1])); //[1,1]
+//console.log(truthyArray(["something", "", 1, 0, true, false])) //["something", 1, true]
 
 //return sum of all numbers in an array
 
@@ -204,10 +204,52 @@ function sumOfNumbers(anyArray) {
         }
         i++;
     }
-    
+
     return sum;
-    
+
 }
 
-console.log(sumOfNumbers(["hi", 2, -2, 4])); //4
-console.log(sumOfNumbers([16, "hi", 2, -200, 44])); //-138
+//console.log(sumOfNumbers(["hi", 2, -2, 4])); //4
+//console.log(sumOfNumbers([16, "hi", 2, -200, 44])); //-138
+
+//take two arrays, return all elements that are only in one array
+
+function numbersInOneArray(firstArray, secondArray) {
+    var uniqueArray = [];
+
+    for (var i = 0; i < firstArray.length; i++) {
+        if (secondArray.indexOf(firstArray[i]) === -1) {
+            uniqueArray.push(firstArray[i]);
+        }
+    }
+    
+    for (i = 0; i < secondArray.length; i++) {
+        if (firstArray.indexOf(secondArray[i]) === -1) {
+            uniqueArray.push(secondArray[i]);
+        }
+    }
+    return uniqueArray;
+}
+
+//console.log(numbersInOneArray([1, 2, 3, 4], [3, 4, 5])); //[1, 2, 5]
+
+//MINI CHALLENGE map every element of an input array
+
+
+function mapArray(anyArray, givenFunction) {
+    var mappedArray = [];
+    
+    for (var i = 0; i < anyArray.length; i++) {
+        mappedArray.push(givenFunction(anyArray[i]));
+    }
+    
+    return mappedArray;
+
+}
+
+
+function timesTwo(a){
+    return a*2;
+}
+
+//console.log(mapArray([3,4,2], timesTwo));
