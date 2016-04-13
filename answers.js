@@ -74,3 +74,42 @@ function operation(a, b, operator) {
 console.log(operation(10, 5, "add")); //15
 console.log(operation(10, 5, "div")); //2
 console.log(operation(10, 5, "something")); //0
+
+//take a string and a number, repeat that string that number of time
+
+function repeatString(anyString, numOfTimes) {
+    var repeatedString = "";
+    var i = 1;
+    while (i <= numOfTimes) {
+        repeatedString += (anyString + " ");
+        i++;
+    }
+    return repeatedString;
+}
+
+console.log(repeatString("repeat this", 6));
+console.log(repeatString("hi", 3)); //hi hi hi
+
+//take a string, return reverse of that string
+
+function reverseString(anyString){
+    return anyString.split("").reverse().join("");
+}
+
+console.log(reverseString("hello")); //olleh
+console.log(reverseString("my name is marie")); //eiram si eman ym
+console.log(reverseString("")); //""
+
+//take a number, return factorial
+
+function factorial(a){
+    var factorial = 1;
+    while (a>0) {
+        factorial *= a;
+        a --;
+    }
+    return factorial;
+}
+
+console.log(factorial(6)); //720
+console.log(factorial(11)); //39916800
