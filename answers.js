@@ -161,7 +161,7 @@ function largestNumber(anyArray) {
     function compareNumbers(a, b) {
         return a - b;
     }
-    
+
     //filter array to get only the numbers
     while (i < anyArray.length) {
         if (typeof(anyArray[i]) === "number") {
@@ -171,8 +171,23 @@ function largestNumber(anyArray) {
     }
 
     sortedArray = numberArray.sort(compareNumbers);
-    return sortedArray[sortedArray.length-1];
+    return sortedArray[sortedArray.length - 1];
 }
 
 console.log(largestNumber([5, 6, 2, 54, 23])); //54
 console.log(largestNumber(["string", 608, 1222, 54, 23, "hi"])); //1222
+
+//return a filtered array with only truthy values
+
+function truthyArray(anyArray) {
+    
+    function isTruthy(value){
+        return value;
+    }
+    
+    return anyArray.filter(isTruthy);
+
+}
+
+console.log(truthyArray([0, 1, 0, 0, 1])); //[1,1]
+console.log(truthyArray(["something","", 1, 0, true, false])) //["something", 1, true]
