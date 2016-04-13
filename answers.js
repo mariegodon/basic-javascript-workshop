@@ -180,14 +180,34 @@ console.log(largestNumber(["string", 608, 1222, 54, 23, "hi"])); //1222
 //return a filtered array with only truthy values
 
 function truthyArray(anyArray) {
-    
-    function isTruthy(value){
+
+    function isTruthy(value) {
         return value;
     }
-    
+
     return anyArray.filter(isTruthy);
 
 }
 
 console.log(truthyArray([0, 1, 0, 0, 1])); //[1,1]
-console.log(truthyArray(["something","", 1, 0, true, false])) //["something", 1, true]
+console.log(truthyArray(["something", "", 1, 0, true, false])) //["something", 1, true]
+
+//return sum of all numbers in an array
+
+function sumOfNumbers(anyArray) {
+    var sum = 0;
+    var i = 0;
+
+    while (i < anyArray.length) {
+        if (typeof(anyArray[i]) === "number") {
+            sum += anyArray[i];
+        }
+        i++;
+    }
+    
+    return sum;
+    
+}
+
+console.log(sumOfNumbers(["hi", 2, -2, 4])); //4
+console.log(sumOfNumbers([16, "hi", 2, -200, 44])); //-138
