@@ -30,3 +30,10 @@ function characterAtPosition(anyString, position){
 console.log(characterAtPosition("my string", 5)); //r
 console.log(characterAtPosition("", 0)); //empty string length 1
 console.log(characterAtPosition("", 5)); //empty string length 1
+
+function add(a, b) {
+    return a+b;
+}
+
+console.log(add(2, 4));
+console.log(add("string", 7));
