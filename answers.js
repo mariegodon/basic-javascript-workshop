@@ -113,3 +113,22 @@ function factorial(a){
 
 console.log(factorial(6)); //720
 console.log(factorial(11)); //39916800
+
+//take a phrase, return longest word of that phrase
+
+function longestWord(anyString){
+    var splitString = anyString.split(" ");
+    var numberOfWords = splitString.length;
+    var longestWord = "";
+    
+    for (var i = 0; i < numberOfWords; i ++) {
+        if (splitString[i].length >= longestWord.length) {
+            longestWord = splitString[i];
+        }
+    }
+    
+    return longestWord;
+}
+
+console.log(longestWord("this is a testing string")); //testing
+console.log(longestWord("bear cat computer mug bottle")); //computer
