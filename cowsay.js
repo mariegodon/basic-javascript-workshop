@@ -43,14 +43,14 @@ function cowSay() {
     }
 
     var quote = fortune();
-    
-    function checkPadding(spaceMissing){
+
+    function checkPadding(spaceMissing) {
         if (spaceMissing >= 1) {
-                    return padding = new Array(spaceMissing + 1).join(' ');
-                }
-                else {
-                    return padding = "";
-                }
+            return padding = new Array(spaceMissing + 1).join(' ');
+        }
+        else {
+            return padding = "";
+        }
     }
 
     if (quote.length < maxCharPerLine) {
@@ -63,36 +63,40 @@ function cowSay() {
     else {
         var i = 0;
         var remainingChar = quote.length;
+        var currentLine = "";
 
         while (remainingChar > 0) {
 
             if (remainingChar === quote.length) {
                 cut[i] = quote.lastIndexOf(" ", (i + 1) * maxCharPerLine);
-                currentLineLength = quote.substring(i * maxCharPerLine, cut[i]).length;
+                currentLine = quote.substring(i * maxCharPerLine, cut[i]);
+                currentLineLength = currentLine.length;
                 spaceMissing = maxCharPerLine - currentLineLength;
                 padding = checkPadding(spaceMissing);
-                cowMiddleLines[i] = "/" + quote.substring(i * maxCharPerLine, cut[i]) + padding + "\\\n";
+                cowMiddleLines[i] = "/" + currentLine + padding + "\\\n";
                 remainingChar -= currentLineLength;
             }
             else if (remainingChar < maxCharPerLine) {
                 cut[i] = quote.lastIndexOf(" ", cut[i - 1] + maxCharPerLine);
-                currentLineLength = quote.substring(cut[i - 1], quote.length).length;
+                currentLine = quote.substring(cut[i - 1], quote.length);
+                currentLineLength = currentLine.length;
                 spaceMissing = maxCharPerLine - currentLineLength;
                 padding = checkPadding(spaceMissing);
-                cowMiddleLines[i] = "\\" + quote.substring(cut[i - 1], quote.length) + padding + "/\n";
+                cowMiddleLines[i] = "\\" + currentLine + padding + "/\n";
                 remainingChar -= currentLineLength;
 
             }
             else {
                 cut[i] = quote.lastIndexOf(" ", (cut[i - 1] + maxCharPerLine));
-                currentLineLength = quote.substring(cut[i - 1], cut[i]).length;
+                currentLine = quote.substring(cut[i - 1], cut[i]);
+                currentLineLength = currentLine.length;
                 spaceMissing = maxCharPerLine - currentLineLength;
                 padding = checkPadding(spaceMissing);
-                cowMiddleLines[i] = "|" + quote.substring(cut[i - 1], cut[i]) + padding + "|\n";
+                cowMiddleLines[i] = "|" + currentLine + padding + "|\n";
                 remainingChar -= currentLineLength;
 
             }
-            
+
             i++;
         }
 
